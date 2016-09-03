@@ -1,0 +1,99 @@
+package com.orangehrm.tests;
+
+import java.io.IOException;
+
+import com.orangehrm.library.OrangeHRMLibrary;
+import com.utils.XLUtilities;
+
+public class HybridTest 
+{
+
+	XLUtilities xl=new XLUtilities();
+	OrangeHRMLibrary hrm=new OrangeHRMLibrary();
+	
+	public void hybridTest() throws IOException
+	{
+		
+		int tccount,tscount;
+		String keywordsxlfile="D:\\Frameworks\\OrangeHRMHybrid\\src\\com\\orangehrm\\keywords\\TestCases.xlsx";
+		String resultsxlfile="D:\\Frameworks\\OrangeHRMHybrid\\src\\com\\orangehrm\\results\\TestResults.xlsx";
+		
+		String tcsheet="TestCases";
+		String tssheet="TestSteps";
+		String tcexeflg,tcid,tstcid,keyword,locator,data,tsres,tcres;
+		
+		boolean res=false;
+		
+		
+		tccount=xl.getRowcount(keywordsxlfile, tcsheet);
+		tscount=xl.getRowcount(keywordsxlfile, tssheet);
+		
+		for (int i = 2; i <=tccount; i++) 
+		{
+			tcexeflg=xl.getCellData(keywordsxlfile, tcsheet, i, 3);
+			if (tcexeflg.equalsIgnoreCase("Y")) 
+			{
+				tcid=xl.getCellData(keywordsxlfile, tcsheet, i, 1);
+				for (int j = 2; j <=tscount; j++) 
+				{
+					tstcid=xl.getCellData(keywordsxlfile, tssheet, j, 1);
+					if (tstcid.equalsIgnoreCase(tcid)) 
+					{
+						keyword=xl.getCellData(keywordsxlfile, tssheet, j, 5);
+						locator=xl.getCellData(keywordsxlfile, tssheet, j, 7);
+						data=xl.getCellData(keywordsxlfile, tssheet, j, 6);
+						switch (keyword.toUpperCase()) 
+						{
+						case "LAUNCHAPP":
+							  res=hrm.launchApp(data, locator);
+							  break;
+						case "INPUTDATA":
+							  res=hrm.inputData(locator, data);
+							  break;
+						case "CLICKELEMENT":
+							  res=hrm.clickElement(locator);
+							  break;
+						case "CHECKADMINLOGIN":
+							  res=hrm.checkAdminLogin();
+							  break;
+						case "LOGOUT":
+							  res=hrm.logout();
+							  hrm.closeApp();
+							  break;	
+						}
+						if (res) 
+						{
+							tsres="Pass";
+						} else 
+						{
+							tsres="Fail";	
+						}
+						
+						xl.writeCell(keywordsxlfile, tssheet, resultsxlfile, j, 4, tsres);
+						keywordsxlfile=resultsxlfile;
+						tcres=xl.getCellData(keywordsxlfile, tcsheet, i, 4);
+						
+						if (!tcres.equalsIgnoreCase("FAIL")) 
+						{
+							xl.writeCell(keywordsxlfile, tcsheet, resultsxlfile, i, 4, tsres);
+							keywordsxlfile=resultsxlfile;
+						}
+						
+						
+					}
+				}
+			} else 
+			{
+				xl.writeCell(keywordsxlfile, tcsheet, resultsxlfile, i, 4, "Blocked");
+				keywordsxlfile=resultsxlfile;
+				
+			}
+		}
+		
+		
+	}
+	
+	
+	
+	
+}

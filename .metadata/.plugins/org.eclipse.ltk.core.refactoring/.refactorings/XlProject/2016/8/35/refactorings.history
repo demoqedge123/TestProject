@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;XLUtilities.java&apos; to &apos;OrangeHRM/src/com.orangehrm.utils&apos;&#x0D;&#x0A;- Original project: &apos;XlProject&apos;&#x0D;&#x0A;- Destination element: &apos;OrangeHRM/src/com.orangehrm.utils&apos;&#x0D;&#x0A;- Original element: &apos;XLUtilities.java&apos;" description="Copy compilation unit" destination="=OrangeHRM/src&lt;com.orangehrm.utils" element1="/src&lt;{XLUtilities.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1472010323757" units="1" version="1.0"/>
+</session>

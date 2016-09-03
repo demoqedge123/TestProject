@@ -1,0 +1,38 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+public class MySqlTest {
+
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException 
+	{
+	
+	String dburl,uid,pwd;
+	dburl="jdbc:mysql://qedgetech.com:3306/qedge_ohrm1";
+	uid="qedgehrm";
+	pwd="12345";
+		
+	Connection dbcon;
+	Class.forName("com.mysql.jdbc.Driver").newInstance();
+	dbcon=DriverManager.getConnection(dburl, uid, pwd);
+	
+	Statement stmt=dbcon.createStatement();
+	ResultSet rs=stmt.executeQuery("select max(emp_id) from hs_hr_employee");
+	rs.next();
+	String maxempid=rs.getString(1);
+	System.out.println(maxempid);
+	
+	rs.close();
+	dbcon.close();
+	
+		
+		
+		
+		
+
+	}
+
+}

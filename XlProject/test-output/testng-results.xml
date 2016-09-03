@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1010" started-at="2016-08-24T03:37:58Z" finished-at="2016-08-24T03:37:59Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1010" started-at="2016-08-24T03:37:58Z" finished-at="2016-08-24T03:37:59Z">
+      <class name="LoginDDT">
+        <test-method status="PASS" signature="logintest(java.lang.String, java.lang.String)[pri:0, instance:LoginDDT@43d0f0e]" name="logintest" duration-ms="30" started-at="2016-08-24T09:07:59Z" data-provider="logindata" finished-at="2016-08-24T09:07:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="logintest(java.lang.String, java.lang.String)[pri:0, instance:LoginDDT@43d0f0e]" name="logintest" duration-ms="4" started-at="2016-08-24T09:07:59Z" data-provider="logindata" finished-at="2016-08-24T09:07:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="logintest(java.lang.String, java.lang.String)[pri:0, instance:LoginDDT@43d0f0e]" name="logintest" duration-ms="4" started-at="2016-08-24T09:07:59Z" data-provider="logindata" finished-at="2016-08-24T09:07:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="logintest(java.lang.String, java.lang.String)[pri:0, instance:LoginDDT@43d0f0e]" name="logintest" duration-ms="21" started-at="2016-08-24T09:07:59Z" data-provider="logindata" finished-at="2016-08-24T09:07:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+        <test-method status="PASS" signature="logintest(java.lang.String, java.lang.String)[pri:0, instance:LoginDDT@43d0f0e]" name="logintest" duration-ms="2" started-at="2016-08-24T09:07:59Z" data-provider="logindata" finished-at="2016-08-24T09:07:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Pass5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest -->
+      </class> <!-- LoginDDT -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
